@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Форма обратной связи управляющей организации УО Стриганов." />
+    <title>Обратная связь | УО Стриганов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/jpeg" href="img/photo_2026-11-04_18-03-32.jpg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app-header"></div>
+
+    <main class="page-shell">
+      <section class="section page-intro">
+        <div class="container">
+          <h1>Обратная связь</h1>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="contact-form-card">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-grid">
+                <label class="form-field">
+                  <span>Имя</span>
+                  <input class="form-control" type="text" name="name" placeholder="Введите имя" required />
+                </label>
+
+                <label class="form-field">
+                  <span>Телефон</span>
+                  <input class="form-control" type="tel" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" required />
+                </label>
+
+                <label class="form-field">
+                  <span>Email</span>
+                  <input class="form-control" type="email" name="email" placeholder="name@example.com" required />
+                </label>
+
+                <label class="form-field">
+                  <span>Адрес дома</span>
+                  <input class="form-control" type="text" name="address" placeholder="Улица, дом, корпус" required />
+                </label>
+
+                <label class="form-field">
+                  <span>Тема</span>
+                  <select class="form-control" name="topic" required>
+                    <option value="">Выберите тему</option>
+                    <option>Вопрос по содержанию дома</option>
+                    <option>Ремонт и технические работы</option>
+                    <option>Обращение по оплате</option>
+                    <option>Другая тема</option>
+                  </select>
+                </label>
+
+                <label class="form-field">
+                  <span>Сообщение</span>
+                  <textarea class="form-control" name="message" rows="5" placeholder="Опишите вашу задачу" required></textarea>
+                </label>
+              </div>
+
+              <label class="checkbox-row" for="consent">
+                <input id="consent" type="checkbox" name="consent" required />
+                <span>Согласен на обработку персональных данных</span>
+              </label>
+
+              <button class="btn btn-primary" type="submit">Отправить</button>
+              <p id="form-status" class="form-status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="app-footer"></div>
+
+    <script src="js/components.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
