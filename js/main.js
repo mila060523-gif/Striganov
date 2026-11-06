@@ -2,6 +2,7 @@ document.addEventListener('components:ready', () => {
   // Инициализация общих интерактивных элементов сайта.
   initNavState();
   initMobileMenu();
+  initAccessibilityMode();
   initFooterYear();
   initContactForm();
   initPhoneMask();
@@ -46,6 +47,27 @@ function initNavState() {
   navLinks.forEach((link) => {
     const href = new URL(link.href, window.location.href).pathname.split('/').pop() || 'index.html';
     link.classList.toggle('is-active', href === currentPath);
+  });
+}
+
+function initAccessibilityMode() {
+  const toggle = document.querySelector('.accessibility-toggle');
+  if (!toggle) {
+    return;
+  }
+
+  const storageKey = 'accessibility-mode';
+  const setMode = (enabled) => {
+    document.documentElement.classList.toggle('accessibility-mode', enabled);
+    toggle.setAttribute('aria-pressed', String(enabled));
+    toggle.setAttribute('aria-label', enabled ? 'Выключить версию для слабовидящих' : 'Включить версию для слабовидящих');
+  };
+
+  setMode(localStorage.getItem(storageKey) === 'enabled');
+  toggle.addEventListener('click', () => {
+    const enabled = !document.documentElement.classList.contains('accessibility-mode');
+    setMode(enabled);
+    localStorage.setItem(storageKey, enabled ? 'enabled' : 'disabled');
   });
 }
 
