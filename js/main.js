@@ -1,182 +1,130 @@
-document.addEventListener('components:ready', () => {
-  // Инициализация общих интерактивных элементов сайта.
-  initNavState();
-  initMobileMenu();
-  initAccessibilityMode();
-  initFooterYear();
-  initContactForm();
-  initPhoneMask();
-});
+// Меню на телефоне и форма заявки. Сайт статический, своего сервера у него нет,
+// поэтому форма готовит письмо в почтовой программе жителя.
+const REQUEST_EMAIL = '89221166119@mail.ru';
 
-const employees = [
-  { name: 'Стриганов Максим Сергеевич', initials: 'МС', position: 'Директор организации', department: 'Руководство', highlighted: true },
-  { name: 'Стриганова Наталья Викторовна', initials: 'НВ', position: 'Председатель организации', department: 'Руководство', highlighted: true },
-  { name: 'Станева Юлия Максимовна', initials: 'ЮМ', position: 'Специалист', department: 'ЖКХ' },
-  { name: 'Домановская Татьяна Васильевна', initials: 'ТВ', position: 'Специалист', department: 'Недвижимость' },
-  { name: 'Кривин Александр Олегович', initials: 'АО', position: 'Специалист', department: 'Недвижимость' }
-];
+initMenu();
+initRequestForm();
 
-document.addEventListener('DOMContentLoaded', renderEmployees);
-
-function renderEmployees() {
-  const grid = document.querySelector('#team-grid');
-  if (!grid) {
-    return;
-  }
-
-  grid.innerHTML = employees.map((employee) => `
-    <article class="team-card">
-      <div class="team-head">
-        <div class="avatar${employee.highlighted ? ' purple' : ''}">${employee.initials}</div>
-        <div class="team-meta">
-          <h3>${employee.name}</h3>
-          <span class="role">${employee.position}</span>
-        </div>
-      </div>
-      <p><strong>Отдел:</strong> ${employee.department}</p>
-      <p>Телефон: —</p>
-      <p>Email: —</p>
-    </article>
-  `).join('');
-}
-
-function initNavState() {
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  navLinks.forEach((link) => {
-    const href = new URL(link.href, window.location.href).pathname.split('/').pop() || 'index.html';
-    link.classList.toggle('is-active', href === currentPath);
-  });
-}
-
-function initAccessibilityMode() {
-  const toggle = document.querySelector('.accessibility-toggle');
-  if (!toggle) {
-    return;
-  }
-
-  const storageKey = 'accessibility-mode';
-  const setMode = (enabled) => {
-    document.documentElement.classList.toggle('accessibility-mode', enabled);
-    toggle.setAttribute('aria-pressed', String(enabled));
-    toggle.setAttribute('aria-label', enabled ? 'Выключить версию для слабовидящих' : 'Включить версию для слабовидящих');
-  };
-
-  setMode(localStorage.getItem(storageKey) === 'enabled');
-  toggle.addEventListener('click', () => {
-    const enabled = !document.documentElement.classList.contains('accessibility-mode');
-    setMode(enabled);
-    localStorage.setItem(storageKey, enabled ? 'enabled' : 'disabled');
-  });
-}
-
-function initMobileMenu() {
-  const header = document.querySelector('.site-header');
-  const burger = document.querySelector('.burger');
+function initMenu() {
+  const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.site-nav');
+  if (!toggle || !nav) return;
 
-  if (!header || !burger || !nav) {
-    return;
-  }
-
-  let overlay = document.querySelector('.mobile-menu-overlay');
-  if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.className = 'mobile-menu-overlay';
-    document.body.appendChild(overlay);
-  }
-
-  const toggleMenu = (forceOpen) => {
-    const shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : !header.classList.contains('nav-open');
-    header.classList.toggle('nav-open', shouldOpen);
-    burger.setAttribute('aria-expanded', String(shouldOpen));
-    nav.classList.toggle('is-open', shouldOpen);
-    overlay.classList.toggle('is-visible', shouldOpen);
-    document.body.classList.toggle('menu-open', shouldOpen);
+  const setOpen = (open) => {
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    nav.classList.toggle('is-open', open);
   };
 
-  burger.addEventListener('click', () => toggleMenu());
-  overlay.addEventListener('click', () => toggleMenu(false));
-
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => toggleMenu(false));
+  toggle.addEventListener('click', () => {
+    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      toggleMenu(false);
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      setOpen(false);
+      toggle.focus();
     }
   });
-}
 
-function initFooterYear() {
-  const yearNode = document.querySelector('.current-year');
-  if (yearNode) {
-    yearNode.textContent = new Date().getFullYear();
-  }
-}
-
-function initPhoneMask() {
-  const phoneInputs = document.querySelectorAll('input[type="tel"]');
-
-  phoneInputs.forEach((input) => {
-    input.addEventListener('input', (event) => {
-      const target = event.target;
-      const digits = target.value.replace(/\D/g, '').substring(0, 11);
-      let formatted = '';
-
-      if (digits.length > 0) {
-        formatted = '+7 (' + digits.substring(1, 4);
-      }
-      if (digits.length >= 4) {
-        formatted += ') ' + digits.substring(4, 7);
-      }
-      if (digits.length >= 7) {
-        formatted += '-' + digits.substring(7, 9);
-      }
-      if (digits.length >= 9) {
-        formatted += '-' + digits.substring(9, 11);
-      }
-
-      target.value = digits.length > 0 ? formatted : '';
-    });
+  document.addEventListener('click', (event) => {
+    if (!nav.contains(event.target) && !toggle.contains(event.target)) setOpen(false);
   });
 }
 
-function initContactForm() {
-  const form = document.querySelector('#contact-form');
-  if (!form) {
-    return;
-  }
+function initRequestForm() {
+  const form = document.querySelector('#request-form');
+  if (!form) return;
 
-  const status = document.querySelector('#form-status');
+  const status = form.querySelector('#form-status');
+  const fields = {
+    name: { test: (value) => value.length > 0, message: 'Укажите имя, чтобы мы знали, как к вам обращаться.' },
+    phone: { test: (value) => normalizePhone(value) !== null, message: 'Укажите телефон из 10 или 11 цифр, например 8 922 000-00-00.' },
+    email: { test: (value) => value === '' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value), message: 'Проверьте email: в адресе должны быть символ @ и домен. Поле можно оставить пустым.' },
+    address: { test: (value) => value.length > 0, message: 'Укажите улицу и номер дома.' },
+    topic: { test: (value) => value.length > 0, message: 'Выберите тему обращения.' },
+    message: { test: (value) => value.length > 0, message: 'Опишите, что случилось или какой у вас вопрос.' }
+  };
+
+  applyLinkPrefill(form);
+
+  const setError = (name, message) => {
+    const control = form.elements[name];
+    const error = form.querySelector(`#${name}-error`);
+    error.textContent = message;
+    if (message) {
+      control.setAttribute('aria-invalid', 'true');
+    } else {
+      control.removeAttribute('aria-invalid');
+    }
+  };
+
+  const validate = () => {
+    const invalid = [];
+    Object.entries(fields).forEach(([name, rule]) => {
+      const valid = rule.test(form.elements[name].value.trim());
+      setError(name, valid ? '' : rule.message);
+      if (!valid) invalid.push(form.elements[name]);
+    });
+
+    const consent = form.elements.consent;
+    setError('consent', consent.checked ? '' : 'Без согласия мы не сможем принять обращение.');
+    if (!consent.checked) invalid.push(consent);
+    return invalid;
+  };
+
+  Object.keys(fields).concat('consent').forEach((name) => {
+    form.elements[name].addEventListener('input', () => {
+      if (form.elements[name].getAttribute('aria-invalid') === 'true') validate();
+    });
+  });
+
+  form.elements.phone.addEventListener('blur', () => {
+    const phone = normalizePhone(form.elements.phone.value);
+    if (phone) form.elements.phone.value = phone;
+  });
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
+    status.className = 'form-status';
+    status.textContent = '';
 
-    const fields = [
-      { name: 'name', value: form.querySelector('[name="name"]').value.trim() },
-      { name: 'phone', value: form.querySelector('[name="phone"]').value.trim() },
-      { name: 'email', value: form.querySelector('[name="email"]').value.trim() },
-      { name: 'address', value: form.querySelector('[name="address"]').value.trim() },
-      { name: 'topic', value: form.querySelector('[name="topic"]').value.trim() },
-      { name: 'message', value: form.querySelector('[name="message"]').value.trim() }
-    ];
-
-    const required = fields.every(({ value }) => value.length > 0);
-    const consent = form.querySelector('[name="consent"]').checked;
-    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.querySelector('[name="email"]').value.trim());
-    const phoneValid = form.querySelector('[name="phone"]').value.replace(/\D/g, '').length >= 11;
-
-    if (!required || !consent || !emailValid || !phoneValid) {
-      status.textContent = 'Проверьте, пожалуйста, все обязательные поля и согласие на обработку данных.';
-      status.classList.add('is-error');
+    const invalid = validate();
+    if (invalid.length > 0) {
+      invalid[0].focus();
       return;
     }
 
-    status.textContent = 'Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.';
-    status.classList.remove('is-error');
-    form.reset();
+    const value = (name) => form.elements[name].value.trim();
+    const body = [
+      `Имя: ${value('name')}`,
+      `Телефон: ${normalizePhone(value('phone'))}`,
+      value('email') ? `Email: ${value('email')}` : null,
+      `Адрес дома: ${value('address')}`,
+      `Тема: ${value('topic')}`,
+      '',
+      value('message')
+    ].filter((line) => line !== null).join('\n');
+
+    const subject = `Обращение с сайта: ${value('topic')}`;
+    window.location.href = `mailto:${REQUEST_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    status.classList.add('is-success');
+    status.textContent = 'Письмо подготовлено в почтовой программе. Проверьте его и нажмите «Отправить» там. Если почта не открылась, позвоните нам: 8 (343) 541-81-49.';
   });
+}
+
+// Ссылка «Запросить копию» со страницы документов сразу заполняет тему и сообщение.
+function applyLinkPrefill(form) {
+  const documentName = new URLSearchParams(window.location.search).get('document');
+  if (!documentName) return;
+  form.elements.topic.value = 'Запрос документа';
+  form.elements.message.value = `Прошу предоставить копию документа: ${documentName}.`;
+}
+
+function normalizePhone(value) {
+  let digits = value.replace(/\D/g, '');
+  if (digits.length === 11 && (digits[0] === '7' || digits[0] === '8')) digits = digits.slice(1);
+  if (digits.length !== 10) return null;
+  return `+7 (${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 8)}-${digits.slice(8)}`;
 }

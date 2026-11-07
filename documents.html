@@ -1,144 +1,140 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Раскрытие информации и документы управляющей организации УО Стриганов." />
-    <title>Раскрытие информации | УО Стриганов</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/jpeg" href="img/photo_2026-11-04_18-03-32.jpg" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body class="documents-page">
-    <div id="app-header"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Документы | УО Стриганов</title>
+  <meta name="description" content="Документы управляющей организации УО Стриганов: устав, лицензия, отчёты, тарифы и договоры.">
+  <link rel="icon" type="image/jpeg" href="img/logo-small.jpg">
+  <link rel="preload" href="fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Перейти к содержанию</a>
 
-    <main class="page-shell">
-      <section class="section page-intro">
-        <div class="container">
-          <span class="eyebrow">Документы организации</span>
-          <h1>Раскрытие информации</h1>
-          <p class="intro-copy">Уставные документы, отчётность, сведения о тарифах и договорах.</p>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-small.jpg" width="52" height="52" alt="">
+        <span>УО Стриганов</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon icon-open" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>
+        <svg class="icon icon-close" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Основное меню">
+        <ul>
+          <li><a href="about.html">О компании</a></li>
+          <li><a href="team.html">Сотрудники</a></li>
+          <li><a href="documents.html" aria-current="page">Документы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="header-phone" href="tel:+73435418149">8 (343) 541-81-49</a>
+        <a class="btn btn-primary btn-small" href="contacts.html#request">Оставить заявку</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="page-intro">
+      <div class="wrap page-intro-grid">
+        <div class="page-intro-copy">
+          <h1>Документы</h1>
+          <p class="lead">Уставные документы, лицензия, отчёты, тарифы и договоры. Копию любого документа можно запросить через форму обращения.</p>
         </div>
-      </section>
+        <div class="page-art" style="--art-bg: #8a3774"><img class="art" src="img/art/page-documents-1280.webp" srcset="img/art/page-documents-640.webp 640w, img/art/page-documents-1280.webp 1280w" sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1260px) 45vw, 540px" width="1280" height="853" fetchpriority="high" alt=""></div>
+      </div>
+    </section>
 
-      <section class="section">
-        <div class="container">
+    <section class="section">
+      <div class="wrap">
+        <!-- Когда файл появится на сайте, замените ссылку документа на
+             <a class="btn btn-secondary btn-small" href="documents/имя-файла.pdf" download>Скачать</a> -->
+        <section class="doc-group" id="charter">
           <h2>Устав</h2>
-          <div class="documents-grid">
-            <article class="document-card">
-              <h3>Устав управляющей организации</h3>
-              <div class="doc-meta">
-                <span class="doc-badge">PDF</span>
-                <span class="doc-date">12.03.2026</span>
-              </div>
-              <a class="btn btn-ghost" href="#" download>Скачать</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
+          <ul>
+            <li class="doc"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg><div><h3>Устав управляющей организации</h3><p>PDF, 12.03.2026</p></div><a class="btn btn-secondary btn-small" href="contacts.html?document=%D0%A3%D1%81%D1%82%D0%B0%D0%B2%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D1%8F%D1%8E%D1%89%D0%B5%D0%B9%20%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8#request" aria-label="Запросить копию: Устав управляющей организации">Запросить копию</a></li>
+          </ul>
+        </section>
+        <section class="doc-group" id="registration">
           <h2>Свидетельство ОГРНИП</h2>
-          <div class="documents-grid">
-            <article class="document-card">
-              <h3>Свидетельство о регистрации</h3>
-              <div class="doc-meta">
-                <span class="doc-badge">PDF</span>
-                <span class="doc-date">25.03.2015</span>
-              </div>
-              <a class="btn btn-ghost" href="#" download>Скачать</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
+          <ul>
+            <li class="doc"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg><div><h3>Свидетельство о регистрации</h3><p>PDF, 25.03.2015</p></div><a class="btn btn-secondary btn-small" href="contacts.html?document=%D0%A1%D0%B2%D0%B8%D0%B4%D0%B5%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE%20%D0%BE%20%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8#request" aria-label="Запросить копию: Свидетельство о регистрации">Запросить копию</a></li>
+          </ul>
+        </section>
+        <section class="doc-group" id="licenses">
           <h2>Лицензии</h2>
-          <div class="documents-grid">
-            <article class="document-card">
-              <h3>Лицензия на управление многоквартирными домами</h3>
-              <div class="doc-meta">
-                <span class="doc-badge">DOC</span>
-                <span class="doc-date">14.08.2024</span>
-              </div>
-              <a class="btn btn-ghost" href="#" download>Скачать</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
+          <ul>
+            <li class="doc"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg><div><h3>Лицензия на управление многоквартирными домами</h3><p>DOC, 14.08.2024</p></div><a class="btn btn-secondary btn-small" href="contacts.html?document=%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F%20%D0%BD%D0%B0%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%BD%D1%8B%D0%BC%D0%B8%20%D0%B4%D0%BE%D0%BC%D0%B0%D0%BC%D0%B8#request" aria-label="Запросить копию: Лицензия на управление многоквартирными домами">Запросить копию</a></li>
+          </ul>
+        </section>
+        <section class="doc-group" id="reports">
           <h2>Отчёты</h2>
-          <div class="documents-grid">
-            <article class="document-card">
-              <h3>Отчет о деятельности за 2025 год</h3>
-              <div class="doc-meta">
-                <span class="doc-badge">PDF</span>
-                <span class="doc-date">11.01.2026</span>
-              </div>
-              <a class="btn btn-ghost" href="#" download>Скачать</a>
-            </article>
-            <article class="document-card">
-              <h3>Отчет по содержанию общего имущества</h3>
-              <div class="doc-meta">
-                <span class="doc-badge">PDF</span>
-                <span class="doc-date">18.02.2026</span>
-              </div>
-              <a class="btn btn-ghost" href="#" download>Скачать</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
+          <ul>
+            <li class="doc"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg><div><h3>Отчёт о деятельности за 2025 год</h3><p>PDF, 11.01.2026</p></div><a class="btn btn-secondary btn-small" href="contacts.html?document=%D0%9E%D1%82%D1%87%D1%91%D1%82%20%D0%BE%20%D0%B4%D0%B5%D1%8F%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8%20%D0%B7%D0%B0%202025%20%D0%B3%D0%BE%D0%B4#request" aria-label="Запросить копию: Отчёт о деятельности за 2025 год">Запросить копию</a></li>
+            <li class="doc"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg><div><h3>Отчёт по содержанию общего имущества</h3><p>PDF, 18.02.2026</p></div><a class="btn btn-secondary btn-small" href="contacts.html?document=%D0%9E%D1%82%D1%87%D1%91%D1%82%20%D0%BF%D0%BE%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D1%8E%20%D0%BE%D0%B1%D1%89%D0%B5%D0%B3%D0%BE%20%D0%B8%D0%BC%D1%83%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%B0#request" aria-label="Запросить копию: Отчёт по содержанию общего имущества">Запросить копию</a></li>
+          </ul>
+        </section>
+        <section class="doc-group" id="tariffs">
           <h2>Тарифы</h2>
-          <div class="documents-grid">
-            <article class="document-card">
-              <h3>Тарифы на содержание и ремонт</h3>
-              <div class="doc-meta">
-                <span class="doc-badge">PDF</span>
-                <span class="doc-date">01.04.2026</span>
-              </div>
-              <a class="btn btn-ghost" href="#" download>Скачать</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
+          <ul>
+            <li class="doc"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg><div><h3>Тарифы на содержание и ремонт</h3><p>PDF, 01.04.2026</p></div><a class="btn btn-secondary btn-small" href="contacts.html?document=%D0%A2%D0%B0%D1%80%D0%B8%D1%84%D1%8B%20%D0%BD%D0%B0%20%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82#request" aria-label="Запросить копию: Тарифы на содержание и ремонт">Запросить копию</a></li>
+          </ul>
+        </section>
+        <section class="doc-group" id="contracts">
           <h2>Договоры</h2>
-          <div class="documents-grid">
-            <article class="document-card">
-              <h3>Договор управления многоквартирным домом</h3>
-              <div class="doc-meta">
-                <span class="doc-badge">DOC</span>
-                <span class="doc-date">05.06.2025</span>
-              </div>
-              <a class="btn btn-ghost" href="#" download>Скачать</a>
-            </article>
-            <article class="document-card">
-              <h3>Договор на выполнение ремонтных работ</h3>
-              <div class="doc-meta">
-                <span class="doc-badge">PDF</span>
-                <span class="doc-date">19.09.2025</span>
-              </div>
-              <a class="btn btn-ghost" href="#" download>Скачать</a>
-            </article>
-          </div>
-        </div>
-      </section>
-    </main>
+          <ul>
+            <li class="doc"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg><div><h3>Договор управления многоквартирным домом</h3><p>DOC, 05.06.2025</p></div><a class="btn btn-secondary btn-small" href="contacts.html?document=%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%BD%D1%8B%D0%BC%20%D0%B4%D0%BE%D0%BC%D0%BE%D0%BC#request" aria-label="Запросить копию: Договор управления многоквартирным домом">Запросить копию</a></li>
+            <li class="doc"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /><path d="M14 2v4a2 2 0 0 0 2 2h4" /><path d="M10 9H8" /><path d="M16 13H8" /><path d="M16 17H8" /></svg><div><h3>Договор на выполнение ремонтных работ</h3><p>PDF, 19.09.2025</p></div><a class="btn btn-secondary btn-small" href="contacts.html?document=%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%BD%D0%B0%20%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%D0%BD%D1%8B%D1%85%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82#request" aria-label="Запросить копию: Договор на выполнение ремонтных работ">Запросить копию</a></li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
 
-    <div id="app-footer"></div>
+  <footer class="site-footer on-brand">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-org">УО «ИП Стриганов М.С.»</p>
+        <p>ИНН 662342147371</p>
+        <p>ОГРНИП 315662300003321</p>
+      </div>
+      <div>
+        <h2>Контакты</h2>
+        <ul>
+          <li><a href="tel:+73435418149">8 (343) 541-81-49</a></li>
+          <li><a href="tel:+79221166119">8 (922) 116-61-19</a></li>
+          <li><a href="mailto:89221166119@mail.ru">89221166119@mail.ru</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Режим работы</h2>
+        <p>пн–пт 09:00–18:00</p>
+        <p>обед 13:00–14:00</p>
+        <p>г.&nbsp;Нижний&nbsp;Тагил, ул.&nbsp;Карла&nbsp;Маркса,&nbsp;23</p>
+      </div>
+      <div>
+        <h2>Ссылки</h2>
+        <ul>
+          <li><a href="https://vk.com/gkx_nizhniy_tagil" target="_blank" rel="noreferrer">ВКонтакте</a></li>
+          <li><a href="https://tagil.holme.ru/uk/5b767b6df61e829e1cb9923a/" target="_blank" rel="noreferrer">Партнёрский сайт</a></li>
+          <li><a href="about.html">Реквизиты</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>© 2026 УО Стриганов</p>
+    </div>
+  </footer>
 
-    <script src="js/components.js" defer></script>
-    <script src="js/main.js" defer></script>
-  </body>
+  <div class="action-bar">
+    <a class="btn btn-secondary" href="tel:+73435418149"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>Позвонить</a>
+    <a class="btn btn-primary" href="contacts.html#request">Оставить заявку</a>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
 </html>

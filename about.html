@@ -1,114 +1,132 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Сведения и раскрытие информации управляющей организации УО Стриганов." />
-    <title>О компании | УО Стриганов</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/jpeg" href="img/photo_2026-11-04_18-03-32.jpg" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <div id="app-header"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>О компании и реквизиты | УО Стриганов</title>
+  <meta name="description" content="Реквизиты управляющей организации УО «ИП Стриганов М.С.»: ИНН, ОГРНИП, банковские реквизиты и контакты.">
+  <link rel="icon" type="image/jpeg" href="img/logo-small.jpg">
+  <link rel="preload" href="fonts/golos-text-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Перейти к содержанию</a>
 
-    <main class="page-shell">
-      <section class="section page-intro">
-        <div class="container">
-          <span class="eyebrow">О компании</span>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <img src="img/logo-small.jpg" width="52" height="52" alt="">
+        <span>УО Стриганов</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon icon-open" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>
+        <svg class="icon icon-close" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Основное меню">
+        <ul>
+          <li><a href="about.html" aria-current="page">О компании</a></li>
+          <li><a href="team.html">Сотрудники</a></li>
+          <li><a href="documents.html">Документы</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="header-phone" href="tel:+73435418149">8 (343) 541-81-49</a>
+        <a class="btn btn-primary btn-small" href="contacts.html#request">Оставить заявку</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="page-intro">
+      <div class="wrap page-intro-grid">
+        <div class="page-intro-copy">
           <h1>О компании</h1>
-          <p class="intro-copy">Управляющая организация «ИП Стриганов Максим Сергеевич» обеспечивает надлежащее содержание многоквартирных домов, качественное обслуживание и оперативное взаимодействие с собственниками и жителями.</p>
+          <p class="lead">Управляющая организация «ИП Стриганов Максим Сергеевич» обеспечивает содержание многоквартирных домов, обслуживание и взаимодействие с собственниками и жителями.</p>
         </div>
-      </section>
+        <div class="page-art" style="--art-bg: #3544a6"><img class="art" src="img/art/page-about-1280.webp" srcset="img/art/page-about-640.webp 640w, img/art/page-about-1280.webp 1280w" sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1260px) 45vw, 540px" width="1280" height="853" fetchpriority="high" alt=""></div>
+      </div>
+    </section>
 
-      <section class="section">
-        <div class="container info-grid">
-          <div class="card">
-            <table class="info-table" aria-label="Реквизиты организации">
-              <caption>Реквизиты организации</caption>
-              <tbody>
-                <tr><th scope="row">Краткое наименование</th><td>УО «ИП Стриганов М.С.»</td></tr>
-                <tr><th scope="row">Полное наименование</th><td>Управляющая организация «Индивидуальный предприниматель Стриганов Максим Сергеевич»</td></tr>
-                <tr><th scope="row">Руководитель</th><td>Директор Стриганов Максим Сергеевич</td></tr>
-                <tr><th scope="row">Фактический адрес</th><td>622001, Свердловская обл., г. Нижний Тагил, ул. Карла Маркса, д. 23</td></tr>
-                <tr><th scope="row">ИНН</th><td>662342147371</td></tr>
-                <tr><th scope="row">ОГРНИП</th><td>315662300003321</td></tr>
-                <tr><th scope="row">Дата регистрации</th><td>25.03.2015</td></tr>
-                <tr><th scope="row">Свидетельство</th><td>Серия 66 №007839640</td></tr>
-                <tr><th scope="row">Регистрирующий орган</th><td>Межрайонная ИФНС №16 по Свердловской области</td></tr>
-                <tr><th scope="row">ОКПО</th><td>0198942958</td></tr>
-                <tr><th scope="row">ОКОГУ</th><td>4210015</td></tr>
-                <tr><th scope="row">ОКФС/ОКОПФ</th><td>50102</td></tr>
-                <tr><th scope="row">ОКВЭД (осн.)</th><td>68.32E</td></tr>
-                <tr><th scope="row">E-mail</th><td><a href="mailto:89221166119@mail.ru">89221166119@mail.ru</a></td></tr>
-                <tr><th scope="row">Телефоны</th><td><a href="tel:+73435418149">8 (343) 541-81-49</a>, <a href="tel:+79221166119">8 (922) 116-61-19</a></td></tr>
-              </tbody>
-            </table>
-          </div>
+    <section class="section">
+      <div class="wrap details-stack">
+        <table class="info-table">
+          <caption>Реквизиты организации</caption>
+          <tbody>
+              <tr><th scope="row">Краткое наименование</th><td>УО «ИП Стриганов М.С.»</td></tr>
+              <tr><th scope="row">Полное наименование</th><td>Управляющая организация «Индивидуальный предприниматель Стриганов Максим Сергеевич»</td></tr>
+              <tr><th scope="row">Руководитель</th><td>Директор Стриганов Максим Сергеевич</td></tr>
+              <tr><th scope="row">Фактический адрес</th><td>622001, Свердловская обл., г. Нижний Тагил, ул. Карла Маркса, д. 23</td></tr>
+              <tr><th scope="row">ИНН</th><td>662342147371</td></tr>
+              <tr><th scope="row">ОГРНИП</th><td>315662300003321</td></tr>
+              <tr><th scope="row">Дата регистрации</th><td>25.03.2015</td></tr>
+              <tr><th scope="row">Свидетельство</th><td>Серия 66 №007839640</td></tr>
+              <tr><th scope="row">Регистрирующий орган</th><td>Межрайонная ИФНС №16 по Свердловской области</td></tr>
+              <tr><th scope="row">ОКПО</th><td>0198942958</td></tr>
+              <tr><th scope="row">ОКОГУ</th><td>4210015</td></tr>
+              <tr><th scope="row">ОКФС/ОКОПФ</th><td>50102</td></tr>
+              <tr><th scope="row">ОКВЭД (осн.)</th><td>68.32E</td></tr>
+              <tr><th scope="row">Email</th><td><a href="mailto:89221166119@mail.ru">89221166119@mail.ru</a></td></tr>
+              <tr><th scope="row">Телефоны</th><td><a href="tel:+73435418149">8 (343) 541-81-49</a>, <a href="tel:+79221166119">8 (922) 116-61-19</a></td></tr>
+          </tbody>
+        </table>
 
-        </div>
-      </section>
+        <table class="info-table">
+          <caption>Банковские реквизиты</caption>
+          <tbody>
+              <tr><th scope="row">Банк</th><td>Филиал «ЦЕНТРАЛЬНЫЙ» Банка ВТБ ПАО, 107031, г. Москва, ул. Рождественка, д. 10/2, стр. 1</td></tr>
+              <tr><th scope="row">Р/с</th><td>40802810200020003893</td></tr>
+              <tr><th scope="row">Кор/с</th><td>30101810145250000411</td></tr>
+              <tr><th scope="row">БИК</th><td>044525411</td></tr>
+              <tr><th scope="row">ИНН банка</th><td>7702070139</td></tr>
+              <tr><th scope="row">КПП банка</th><td>770943002</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 
-      <section class="section">
-        <div class="container">
-          <div class="card">
-            <table class="info-table" aria-label="Банковские реквизиты">
-              <caption>Банковские реквизиты</caption>
-              <tbody>
-                <tr><th scope="row">Банк</th><td>Филиал «ЦЕНТРАЛЬНЫЙ» Банка ВТБ ПАО, 107031, г. Москва, ул. Рождественка, д. 10/2, стр. 1</td></tr>
-                <tr><th scope="row">Р/с</th><td>40802810200020003893</td></tr>
-                <tr><th scope="row">Кор/с</th><td>30101810145250000411</td></tr>
-                <tr><th scope="row">БИК</th><td>044525411</td></tr>
-                <tr><th scope="row">ИНН банка</th><td>7702070139</td></tr>
-                <tr><th scope="row">КПП банка</th><td>770943002</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+  <footer class="site-footer on-brand">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-org">УО «ИП Стриганов М.С.»</p>
+        <p>ИНН 662342147371</p>
+        <p>ОГРНИП 315662300003321</p>
+      </div>
+      <div>
+        <h2>Контакты</h2>
+        <ul>
+          <li><a href="tel:+73435418149">8 (343) 541-81-49</a></li>
+          <li><a href="tel:+79221166119">8 (922) 116-61-19</a></li>
+          <li><a href="mailto:89221166119@mail.ru">89221166119@mail.ru</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Режим работы</h2>
+        <p>пн–пт 09:00–18:00</p>
+        <p>обед 13:00–14:00</p>
+        <p>г.&nbsp;Нижний&nbsp;Тагил, ул.&nbsp;Карла&nbsp;Маркса,&nbsp;23</p>
+      </div>
+      <div>
+        <h2>Ссылки</h2>
+        <ul>
+          <li><a href="https://vk.com/gkx_nizhniy_tagil" target="_blank" rel="noreferrer">ВКонтакте</a></li>
+          <li><a href="https://tagil.holme.ru/uk/5b767b6df61e829e1cb9923a/" target="_blank" rel="noreferrer">Партнёрский сайт</a></li>
+          <li><a href="about.html">Реквизиты</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>© 2026 УО Стриганов</p>
+    </div>
+  </footer>
 
-      <section class="section disclosure-section">
-        <div class="container">
-          <div class="section-header">
-            <span class="eyebrow">Раскрытие информации</span>
-            <h2>Основные сведения о деятельности</h2>
-          </div>
-          <div class="disclosure-list">
-            <article class="disclosure-item">
-              <h3>Основные показатели финансово-хозяйственной деятельности</h3>
-              <p>Информация готовится к публикации.</p>
-            </article>
-            <article class="disclosure-item">
-              <h3>Информация о выполняемых работах и оказываемых услугах</h3>
-              <p>Сведения размещаются в разделе документов.</p>
-              <a href="documents.html">Перейти к документам</a>
-            </article>
-            <article class="disclosure-item">
-              <h3>Тарифы и размер платы за содержание</h3>
-              <p>Информация готовится к публикации.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+  <div class="action-bar">
+    <a class="btn btn-secondary" href="tel:+73435418149"><svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>Позвонить</a>
+    <a class="btn btn-primary" href="contacts.html#request">Оставить заявку</a>
+  </div>
 
-      <section class="section">
-        <div class="container">
-          <div class="map-card">
-            <iframe
-              src="https://yandex.ru/map-widget/v1/?text=Нижний%20Тагил,%20улица%20Карла%20Маркса,%2023"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Карта офиса УО Стриганов"></iframe>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <div id="app-footer"></div>
-
-    <script src="js/components.js" defer></script>
-    <script src="js/main.js" defer></script>
-  </body>
+  <script src="js/main.js" defer></script>
+</body>
 </html>
