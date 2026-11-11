@@ -110,13 +110,17 @@ function initRequestForm() {
     window.location.href = `mailto:${REQUEST_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     status.classList.add('is-success');
-    status.textContent = 'Письмо подготовлено в почтовой программе. Проверьте его и нажмите «Отправить» там. Если почта не открылась, позвоните нам: 8 (343) 541-81-49.';
+    status.textContent = 'Письмо подготовлено в почтовой программе. Проверьте его и нажмите «Отправить» там. Если почта не открылась, позвоните нам: 8 (3435) 41-81-49.';
   });
 }
 
 // Ссылка «Запросить копию» со страницы документов сразу заполняет тему и сообщение.
 function applyLinkPrefill(form) {
-  const documentName = new URLSearchParams(window.location.search).get('document');
+  const params = new URLSearchParams(window.location.search);
+  const topics = { repair: 'Ремонт, строительство, клининг', realty: 'Аренда и сделки с недвижимостью' };
+  if (topics[params.get('topic')]) form.elements.topic.value = topics[params.get('topic')];
+
+  const documentName = params.get('document');
   if (!documentName) return;
   form.elements.topic.value = 'Запрос документа';
   form.elements.message.value = `Прошу предоставить копию документа: ${documentName}.`;
